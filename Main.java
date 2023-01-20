@@ -7,27 +7,32 @@ import java.io.FileWriter;
 public class Main {
     public static void main(String[] args) {
         String filePath = "C:\\Users\\P\\Desktop\\Geekbrains. Homework\\Introduction_to_OOP\\OOPHomework4\\dairy.csv";
-        String searchTerm = "3";
+        String searchTerm = "Anna Ivanova";
         List<DairyData> dairyList = new ArrayList<>();
 
-        DairyData firstTask = new DairyData(1, "Ivan Petrov", Priority.important);
-        DairyData secondTask = new DairyData(2, "Anna Ivanova", Priority.important);
-        DairyData thirdTask = new DairyData(3, "Petr Petrov", Priority.urgent);
-        dairyList.add(firstTask);
-        dairyList.add(secondTask);
-        dairyList.add(thirdTask);
+        DairyData task1 = new DairyData(1, "Ivan Petrov", Priority.important);
+        DairyData task2 = new DairyData(2, "Anna Ivanova", Priority.important);
+        DairyData task3 = new DairyData(3, "Petr Ivanov", Priority.urgent);
+        DairyData task4 = new DairyData(4, "Olga Petrova", Priority.notImportant);
+        DairyData task5 = new DairyData(5, "Anastasia Vasilieva", Priority.notImportant);
+        dairyList.add(task1);
+        dairyList.add(task2);
+        dairyList.add(task3);
+        dairyList.add((task4));
+        dairyList.add(task5);
 
-        for (DairyData d : dairyList) {
-            if (d.getPriority() == Priority.urgent) {
-                System.out.println(d);
-            }
-        }
+        // for (DairyData d : dairyList) {
+        //     if (d.getPriority() == Priority.urgent) {
+        //         System.out.println(d);
+        //     }
+        // }
 
         // System.out.println(firstTask);
 
         FileReadWrite<DairyData> file = new FileReadWrite<>();
         file.fileCreate(filePath);
         file.fileWrite(dairyList, filePath);
+        file.fileRead(filePath);
         // file.fileSearch(searchTerm, filePath);
     }
 }

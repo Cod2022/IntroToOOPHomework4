@@ -7,6 +7,10 @@ public class DairyData {
     private LocalDate date;
     private LocalTime time;
     private Priority priority;
+    private String priorityString;
+
+    public DairyData() {
+    }
 
     public DairyData(int id, String fullName, Priority priority) {
         this.id = id;
@@ -15,6 +19,7 @@ public class DairyData {
         this.time = LocalTime.now();
         this.priority = priority;
     }
+
     public int getId() {
         return id;
     }
@@ -49,9 +54,17 @@ public class DairyData {
         this.priority = priority;
     }
 
+    public String getPriorityString() {
+        return priorityString;
+    }
+
+    public void setPriorityString(String priorityString) {
+        this.priorityString = priorityString;
+    }
+
     @Override
     public String toString() {
-        return String.format("ID:%d Name:%s Date:%s Time:%s", id, fullName, date, time);
+        return String.format("ID:%d Name:%s Date:%s Time:%s Priority:%s", id, fullName, date, time, priorityString);
     }
 
     
