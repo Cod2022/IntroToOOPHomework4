@@ -75,7 +75,7 @@ public class FileReadWrite <T extends DairyData>{
         }
     }
 
-    public void fileSearch(String searchTerm, String filePath) {
+    public void fileSearchByName(String searchTerm, String filePath) {
         Scanner x;
         boolean found = false;
         String id = ""; String name = "";

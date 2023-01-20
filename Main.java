@@ -7,7 +7,7 @@ import java.io.FileWriter;
 public class Main {
     public static void main(String[] args) {
         String filePath = "C:\\Users\\P\\Desktop\\Geekbrains. Homework\\Introduction_to_OOP\\OOPHomework4\\dairy.csv";
-        String searchTerm = "Anna Ivanova";
+        String searchName = "Anna Ivanova";
         List<DairyData> dairyList = new ArrayList<>();
 
         DairyData task1 = new DairyData(1, "Ivan Petrov", Priority.important);
@@ -21,18 +21,10 @@ public class Main {
         dairyList.add((task4));
         dairyList.add(task5);
 
-        // for (DairyData d : dairyList) {
-        //     if (d.getPriority() == Priority.urgent) {
-        //         System.out.println(d);
-        //     }
-        // }
-
-        // System.out.println(firstTask);
-
         FileReadWrite<DairyData> file = new FileReadWrite<>();
         file.fileCreate(filePath);
         file.fileWrite(dairyList, filePath);
         file.fileRead(filePath);
-        // file.fileSearch(searchTerm, filePath);
+        file.fileSearchByName(searchName, filePath);
     }
 }
