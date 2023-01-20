@@ -21,10 +21,15 @@ public class FileReadWrite <T extends DairyData>{
     public void fileWrite(List<T> dairyList, String filePath) {
         try {
             FileWriter fileWriter = new FileWriter(filePath);
+            fileWriter.append("ID;FullName;Date;Time\n");
             for (T d : dairyList) {
                 fileWriter.append(String.valueOf(d.getId()));
-                fileWriter.append(",");
+                fileWriter.append(";");
                 fileWriter.append(d.getFullName());
+                fileWriter.append(";");
+                fileWriter.append(d.getDate().toString());
+                fileWriter.append(";");
+                fileWriter.append(d.getTime().toString());
                 fileWriter.append("\n");
             }
             fileWriter.close();
@@ -33,7 +38,7 @@ public class FileReadWrite <T extends DairyData>{
         }
     }
 
-    public void fileRead(String searchTerm, String filePath) {
+    public void fileSearch(String searchTerm, String filePath) {
         Scanner x;
         boolean found = false;
         String id = ""; String name = "";
