@@ -6,7 +6,8 @@ import java.io.FileWriter;
 
 public class Main {
     public static void main(String[] args) {
-        String filePath = "C:\\Users\\P\\Desktop\\Geekbrains. Homework\\Introduction_to_OOP\\OOPHomework4\\dairy.csv";
+        // String filePath = "C:\\Users\\P\\Desktop\\Geekbrains. Homework\\Introduction_to_OOP\\OOPHomework4\\dairy.csv";
+        String filePath = "dairy.csv";
         String searchName = "Anna Ivanova";
         List<DairyData> dairyList = new ArrayList<>();
 
@@ -22,7 +23,6 @@ public class Main {
         dairyList.add(task5);
 
         FileReadWrite<DairyData> file = new FileReadWrite<>();
-        // file.fileCreate(filePath);
         file.fileWrite(dairyList, filePath);
         file.fileRead(filePath);
         file.fileSearchByName(searchName, filePath);
