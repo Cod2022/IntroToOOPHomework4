@@ -10,15 +10,15 @@ public class Main {
         String searchTerm = "3";
         List<DairyData> dairyList = new ArrayList<>();
 
-        DairyData firstTask = new DairyData(1, "Ivan", Priority.important);
-        DairyData secondTask = new DairyData(2, "Anna", Priority.important);
-        DairyData thirdTask = new DairyData(3, "Petr", Priority.urgent);
+        DairyData firstTask = new DairyData(1, "Ivan Petrov", Priority.important);
+        DairyData secondTask = new DairyData(2, "Anna Ivanova", Priority.important);
+        DairyData thirdTask = new DairyData(3, "Petr Petrov", Priority.urgent);
         dairyList.add(firstTask);
         dairyList.add(secondTask);
         dairyList.add(thirdTask);
 
         for (DairyData d : dairyList) {
-            if (d.getPriority() == Priority.important) {
+            if (d.getPriority() == Priority.urgent) {
                 System.out.println(d);
             }
         }

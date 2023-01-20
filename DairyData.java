@@ -42,16 +42,16 @@ public class DairyData {
         this.time = time;
     }
 
-    
-    @Override
-    public String toString() {
-        return String.format("ID: %d Name: %s Date: %s Time: %s", id, fullName, date, time);
-    }
     public Priority getPriority() {
         return priority;
     }
     public void setPriority(Priority priority) {
         this.priority = priority;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ID:%d Name:%s Date:%s Time:%s", id, fullName, date, time);
     }
 
     
