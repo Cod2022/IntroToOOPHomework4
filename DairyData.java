@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 
 public class DairyData {
     private int id;
@@ -16,7 +17,7 @@ public class DairyData {
         this.id = id;
         this.fullName = fullName;
         this.date = LocalDate.now();
-        this.time = LocalTime.now();
+        this.time = LocalTime.now().truncatedTo(ChronoUnit.SECONDS);
         this.priority = priority;
     }
 
