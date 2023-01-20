@@ -2,16 +2,18 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class DairyData {
-    public int id;
-    public String fullName;
-    public LocalDate date;
-    public LocalTime time;
+    private int id;
+    private String fullName;
+    private LocalDate date;
+    private LocalTime time;
+    private Priority priority;
 
-    public DairyData(int id, String fullName) {
+    public DairyData(int id, String fullName, Priority priority) {
         this.id = id;
         this.fullName = fullName;
         this.date = LocalDate.now();
         this.time = LocalTime.now();
+        this.priority = priority;
     }
     public int getId() {
         return id;
@@ -39,9 +41,17 @@ public class DairyData {
     public void setTime(LocalTime time) {
         this.time = time;
     }
+
+    
     @Override
     public String toString() {
         return String.format("ID: %d Name: %s Date: %s Time: %s", id, fullName, date, time);
+    }
+    public Priority getPriority() {
+        return priority;
+    }
+    public void setPriority(Priority priority) {
+        this.priority = priority;
     }
 
     

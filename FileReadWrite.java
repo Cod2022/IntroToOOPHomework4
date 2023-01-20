@@ -21,7 +21,7 @@ public class FileReadWrite <T extends DairyData>{
     public void fileWrite(List<T> dairyList, String filePath) {
         try {
             FileWriter fileWriter = new FileWriter(filePath);
-            fileWriter.append("ID;FullName;Date;Time\n");
+            fileWriter.append("ID;FullName;Date;Time;Priority\n");
             for (T d : dairyList) {
                 fileWriter.append(String.valueOf(d.getId()));
                 fileWriter.append(";");
@@ -30,6 +30,8 @@ public class FileReadWrite <T extends DairyData>{
                 fileWriter.append(d.getDate().toString());
                 fileWriter.append(";");
                 fileWriter.append(d.getTime().toString());
+                fileWriter.append(";");
+                fileWriter.append(d.getPriority().toString());
                 fileWriter.append("\n");
             }
             fileWriter.close();

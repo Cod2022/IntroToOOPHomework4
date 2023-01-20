@@ -10,14 +10,20 @@ public class Main {
         String searchTerm = "3";
         List<DairyData> dairyList = new ArrayList<>();
 
-        DairyData firstTask = new DairyData(1, "Ivan");
-        DairyData secondTask = new DairyData(2, "Anna");
-        DairyData thirdTask = new DairyData(3, "Petr");
+        DairyData firstTask = new DairyData(1, "Ivan", Priority.important);
+        DairyData secondTask = new DairyData(2, "Anna", Priority.important);
+        DairyData thirdTask = new DairyData(3, "Petr", Priority.urgent);
         dairyList.add(firstTask);
         dairyList.add(secondTask);
         dairyList.add(thirdTask);
 
-        System.out.println(firstTask);
+        for (DairyData d : dairyList) {
+            if (d.getPriority() == Priority.important) {
+                System.out.println(d);
+            }
+        }
+
+        // System.out.println(firstTask);
 
         FileReadWrite<DairyData> file = new FileReadWrite<>();
         file.fileCreate(filePath);
