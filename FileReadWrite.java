@@ -13,17 +13,11 @@ import javax.swing.JOptionPane;
 
 public class FileReadWrite <T extends DairyData>{
     
-    public void fileCreate(String filePath) {
+    
+    public void fileWrite(List<T> dairyList, String filePath) {
         try {
             File file = new File(filePath);
             file.createNewFile();
-        } catch (IOException e) {
-            System.out.println("Error" + e);
-        }
-    }
-
-    public void fileWrite(List<T> dairyList, String filePath) {
-        try {
             FileWriter fileWriter = new FileWriter(filePath);
             fileWriter.append("ID;FullName;Date;Time;Priority\n");
             for (T d : dairyList) {
